@@ -15,7 +15,7 @@ class Output extends Component {
       <View>
         <View style={styles.container}>
           <View style={styles.container2}>
-            <View style={styles.container4}>
+            
               <View style={styles.container5}>
                 <View style={styles.container7}></View>
                 <View style={styles.container8}>
@@ -25,7 +25,7 @@ class Output extends Component {
                 <View style={styles.container9}></View>
               </View>
               <View style={styles.container6}></View>
-            </View>
+            
           </View>
           <View style={styles.container3}>
             <Text style={styles.text}>Hello</Text>
@@ -40,77 +40,93 @@ export default Output;
 
 const styles = StyleSheet.create({
   container2: {
-    width: 230,
     marginHorizontal: 0,
-
     color: "white",
     fontSize: 28,
+    flex: 80,
+    height: 100,
+    flexDirection:"column",
+  
   },
   container3: {
     alignItems: "center",
     justifyContent: "center",
-    width: 63,
-    backgroundColor: "black",
+    backgroundColor: "green",
     color: "white",
-
+   borderLeftWidth:3,
+   borderLeftColor:"red",
+    
     marginEnd: 0,
+  flex: 20,
+  height: 94
   },
   container: {
+    width:296,
     flexDirection: "row",
-    flex: 1,
+    backgroundColor: "blue",
+    alignItems:"center",
+    justifyContent: "center",
+   flex: 1,
+   borderColor: "red",
+   borderWidth: 2,
+
+    
   },
   text: {
     color: "white",
     fontFamily: "myFont",
   },
-  container4: {
-    flexDirection: "column",
-    flex: 1,
-  },
+
 
   container5: {
-    height: 65,
-    borderColor: "red",
+
+    borderColor: "white",
     borderWidth: 2,
-    flexDirection: "row",
-    flex: 1,
+    flex: 20,
+    flexDirection: "row",   
   },
   container6: {
-    height: 29,
-    backgroundColor: "black",
-    borderColor: "red",
+ 
+  
+    borderColor: "white",
     borderWidth: 2,
+    flex: 10
   },
   container7: {
-    width: 60,
+   
 
-    borderColor: "red",
+    borderColor: "white",
     borderWidth: 2,
+    flex: 10
   },
   container8: {
-    width: 110,
+  
 
-    borderColor: "red",
+    borderColor: "white",
     borderWidth: 2,
+    flex: 10,
     flexDirection: "column",
-    flex: 1,
+   
   },
   container9: {
-    width: 56,
+ 
 
-    borderColor: "red",
+    borderColor: "white",
     borderWidth: 2,
+    flex: 10,
   },
 
   container10: {
-    height: 40,
-    borderColor: "red",
+ 
+    borderColor: "white",
     borderWidth: 2,
+    flex: 10,
   },
 
   container11: {
-    height: 29,
-    borderColor: "red",
+ 
+    borderColor: "white",
     borderWidth: 2,
+    flex: 10,
   },
 });
