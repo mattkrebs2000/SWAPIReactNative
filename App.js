@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ImageBackground,
   View,
   Image,
   StyleSheet,
   ScrollView,
+  Dimensions,
   Text,
+  SafeAreaView,
 } from "react-native";
 import Selecting from "./components/SelectingContainer";
 import Results from "./components/ResultsContainer";
@@ -18,21 +20,46 @@ const fetchFont = () => {
   });
 };
 
-export default function App() {
+const useScreenDimensions = () => {
+  const [screenData, setScreenData] = useState(Dimensions.get("screen"));
 
+  useEffect(() => {
+    const onChange = (result) => {
+      setScreenData(result.screen);
+    };
+
+    Dimensions.addEventListener("change", onChange);
+
+    return () => Dimensions.removeEventListener("change", onChange);
+  });
+
+  return {
+    ...screenData,
+    isLandscap: screenData.width > screenData.height,
+  };
+};
+
+
+function App() {
+  const screenData = useScreenDimensions();
   const [fontLoaded, setFontLoaded] = useState(false);
 
-  if (!fontLoaded) {
-    return (
-      <AppLoading
-        startAsync={fetchFont}
-        onError={() => console.log("Error")}
-        onFinish={() => {
-          setFontLoaded(true);
-        }}
-      />
+    if (!fontLoaded) {
+      return (
+        <AppLoading
+          startAsync={fetchFont}
+          onError={() => console.log("Error")}
+          onFinish={() => {
+            setFontLoaded(true);
+          }}
+        />
+      );
+    }
+
+    console.log(
+      "If you need to manipulate based on screen use 'isLandscap'",
+      screenData
     );
-  }
 
   return (
     <View style={styles.container}>
@@ -43,27 +70,28 @@ export default function App() {
         }}
         style={styles.bimage}
       >
-        
         <View style={styles.overlay}>
-         
-          <Image
-            style={styles.swimage}
-            source={{
-              uri:
-                "http://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG32.png",
-            }}
-          ></Image>
-          
-          <Selecting />
+          <SafeAreaView style={styles.center}>
+            <Image
+              style={styles.swimage}
+              source={{
+                uri:
+                  "http://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG32.png",
+              }}
+            ></Image>
 
-          <ScrollView>
+            <Selecting />
+            <ScrollView>
             <Results />
-          </ScrollView>
+            </ScrollView>
+          </SafeAreaView>
         </View>
       </ImageBackground>
     </View>
   );
-}
+};
+export default App;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -85,11 +113,14 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     alignItems: "center",
   },
+
   swimage: {
-    alignItems: "center",
     marginTop: 40,
     width: 209,
     height: 100,
   },
-  
+  center: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });

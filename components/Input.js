@@ -8,7 +8,11 @@ class Input extends Component {
     return (
       <View>
         <View style={styles.container}>
-          <TextInput style={styles.input} />
+          <TextInput
+            placeholder="Search Here"
+            placeholderTextColor="white"
+            style={styles.input}
+          />
           <Button
             style={styles.button}
             onPress={() => Alert.alert("Simple Button pressed")}
@@ -26,10 +30,8 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    width: 230,
+    width:230,
     marginHorizontal: 0,
-    borderColor: "gray",
-    borderWidth: 1,
     color: "white",
     fontSize: 28,
     paddingStart: 8,
@@ -44,5 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flex: 1,
+    justifyContent: "center",
+    alignItems:"center",
   },
 });
