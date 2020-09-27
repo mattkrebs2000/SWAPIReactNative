@@ -6,7 +6,6 @@ import {
   StyleSheet,
   ScrollView,
   Dimensions,
-  Text,
   SafeAreaView,
 } from "react-native";
 import Selecting from "./components/SelectingContainer";
@@ -39,27 +38,26 @@ const useScreenDimensions = () => {
   };
 };
 
-
 function App() {
   const screenData = useScreenDimensions();
   const [fontLoaded, setFontLoaded] = useState(false);
 
-    if (!fontLoaded) {
-      return (
-        <AppLoading
-          startAsync={fetchFont}
-          onError={() => console.log("Error")}
-          onFinish={() => {
-            setFontLoaded(true);
-          }}
-        />
-      );
-    }
-
-    console.log(
-      "If you need to manipulate based on screen use 'isLandscap'",
-      screenData
+  if (!fontLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFont}
+        onError={() => console.log("Error")}
+        onFinish={() => {
+          setFontLoaded(true);
+        }}
+      />
     );
+  }
+
+  console.log(
+    "If you need to manipulate based on screen use 'isLandscap'",
+    screenData,
+  );
 
   return (
     <View style={styles.container}>
@@ -80,27 +78,23 @@ function App() {
               }}
             ></Image>
 
-            <Selecting />
+            <Selecting style={styles.selecting} />
             <ScrollView>
-            <Results />
+              <Results style={styles.Results} />
             </ScrollView>
           </SafeAreaView>
         </View>
       </ImageBackground>
     </View>
   );
-};
+}
 export default App;
-
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "column",
-    flex: 1,
     fontFamily: "myFont",
   },
   bimage: {
-    flex: 1,
     alignItems: "center",
     width: null,
     height: null,
@@ -115,12 +109,20 @@ const styles = StyleSheet.create({
   },
 
   swimage: {
-    marginTop: 40,
-    width: 209,
-    height: 100,
+   
+    width:230,
+    height:100
+   
   },
   center: {
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  selecting: {
+   flex: 1,
+  },
+  Results: {
+    flex:2,
   },
 });

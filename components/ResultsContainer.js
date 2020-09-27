@@ -18,8 +18,8 @@ export default ResultsContainer;
 
 const styles = StyleSheet.create({
   container: {
-    width: 300,
-    height: 100,
+    width: 360,
+    height: 80,
     backgroundColor: "rgba(255, 255, 255, 0.1)",
     borderWidth: 2,
     borderColor: "red",

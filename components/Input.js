@@ -30,7 +30,7 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    width:230,
+    width:290,
     marginHorizontal: 0,
     color: "white",
     fontSize: 28,

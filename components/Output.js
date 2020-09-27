@@ -1,34 +1,31 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-
 class Output extends Component {
-  
-  
-  
-
-    
-
-
-    render() {
+  render() {
     return (
       <View>
         <View style={styles.container}>
-          <View style={styles.container2}>
-            
-              <View style={styles.container5}>
-                <View style={styles.container7}></View>
-                <View style={styles.container8}>
-                  <View style={styles.container10}></View>
-                  <View style={styles.container11}></View>
-                </View>
-                <View style={styles.container9}></View>
+          <View style={styles.container5}>
+            <View style={styles.container7}>
+              <View style={styles.face}>
+                <Text style={styles.text}>Hello</Text>
               </View>
-              <View style={styles.container6}></View>
-            
+            </View>
+            <View style={styles.container8}>
+              <View style={styles.container10}>
+                <Text style={styles.text2}>YOOOOO</Text>
+              </View>
+              <View style={styles.container11}>
+                <Text style={styles.text3}>YYYYYY</Text>
+              </View>
+            </View>
+            <View style={styles.container9}>
+              <Text style={styles.text4}>Female</Text>
+            </View>
           </View>
-          <View style={styles.container3}>
-            <Text style={styles.text}>Hello</Text>
+          <View style={styles.container6}>
+            <Text style={styles.text3}>AAAAAA</Text>
           </View>
         </View>
       </View>
@@ -39,94 +36,80 @@ class Output extends Component {
 export default Output;
 
 const styles = StyleSheet.create({
-  container2: {
-    marginHorizontal: 0,
-    color: "white",
-    fontSize: 28,
-    flex: 80,
-    height: 100,
-    flexDirection:"column",
-  
-  },
-  container3: {
+  container: {
+    width: 360,
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "green",
-    color: "white",
-   borderLeftWidth:3,
-   borderLeftColor:"red",
-    
-    marginEnd: 0,
-  flex: 20,
-  height: 94
-  },
-  container: {
-    width:296,
-    flexDirection: "row",
-    backgroundColor: "blue",
-    alignItems:"center",
-    justifyContent: "center",
-   flex: 1,
-   borderColor: "red",
-   borderWidth: 2,
-
-    
+    flex: 1,
+    borderColor: "red",
+    borderWidth: 2,
   },
   text: {
     color: "white",
     fontFamily: "myFont",
   },
 
-
   container5: {
-
-    borderColor: "white",
-    borderWidth: 2,
     flex: 20,
-    flexDirection: "row",   
+    flexDirection: "row",
   },
   container6: {
- 
-  
-    borderColor: "white",
-    borderWidth: 2,
-    flex: 10
+    flex: 5,
+    width: "100%",
+    alignItems: "flex-end",
+    justifyContent: "center",
+    backgroundColor: "black",
   },
   container7: {
-   
-
-    borderColor: "white",
-    borderWidth: 2,
-    flex: 10
+    flex: 7,
+    justifyContent: "center",
+    alignItems: "center",
   },
   container8: {
-  
-
-    borderColor: "white",
-    borderWidth: 2,
-    flex: 10,
+    flex: 20,
     flexDirection: "column",
-   
   },
   container9: {
- 
-
-    borderColor: "white",
-    borderWidth: 2,
-    flex: 10,
+    flex: 6,
+    justifyContent: "center",
+    alignItems:"center",
+    backgroundColor: "black",
   },
 
   container10: {
- 
-    borderColor: "white",
-    borderWidth: 2,
-    flex: 10,
+    flex: 20,
+    justifyContent: "center",
   },
 
   container11: {
- 
-    borderColor: "white",
-    borderWidth: 2,
     flex: 10,
+    justifyContent: "center",
+  },
+  text: {
+    color: "white",
+  },
+  face: {
+    width: 50,
+    height: 50,
+    borderWidth: 2,
+    borderColor: "white",
+    borderRadius: 50,
+
+    overflow: "hidden",
+  },
+  text2: {
+    color: "white",
+    fontSize: 16,
+  },
+
+  text3: {
+    color: "white",
+    fontSize: 11,
+  },
+
+  text4: {
+    color: "white",
+    fontSize: 14,
   },
 });
