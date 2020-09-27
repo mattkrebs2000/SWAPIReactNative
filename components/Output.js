@@ -4,14 +4,12 @@ import { AppLoading, Font } from "expo";
 
 
 
-class Output extends Component {
+const Output = (props) =>(
 
-  render() {
-
-    return (
+  
       <View>
       
-          <View style={styles.container}>
+          <View style={styles.container} width={props.width-35} maxWidth={650}>
             <View style={styles.container5}>
               <View style={styles.container7}>
                 <View style={styles.face}>
@@ -23,11 +21,11 @@ class Output extends Component {
                   <Text style={styles.text2}>Search Here</Text>
                 </View>
                 <View style={styles.container11}>
-                  <Text style={styles.text3}>YYYYYY</Text>
+                  <Text style={styles.text3}>{props.width}</Text>
                 </View>
               </View>
               <View style={styles.container9}>
-                <Text style={styles.text4}>Female</Text>
+                <Text style={styles.text4}>{props.height}</Text>
               </View>
             </View>
             <View style={styles.container6}>
@@ -37,14 +35,12 @@ class Output extends Component {
    
       </View>
     );
-  }
-}
 
 export default Output;
 
 const styles = StyleSheet.create({
   container: {
-    width: 360,
+    width: 340,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -60,7 +56,7 @@ const styles = StyleSheet.create({
   container6: {
     flex: 5,
     width: "100%",
-    alignItems: "flex-end",
+    alignItems: "center",
     justifyContent: "center",
     backgroundColor: "black",
   },
@@ -77,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 6,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: "black"
   },
 
   container10: {
@@ -103,19 +99,19 @@ const styles = StyleSheet.create({
   },
   text2: {
     color: "white",
-    fontSize: 20,
+    fontSize: 23,
     fontFamily: "myFont",
   },
 
   text3: {
     color: "white",
-    fontSize: 12,
+    fontSize: 15,
     fontFamily: "myFont",
     
   },
 
   text4: {
-    fontSize: 12,
+    fontSize: 18,
     fontFamily: "myFont",
     color: "white",
   },

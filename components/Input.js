@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TextInput, Button, Alert } from "react-native";
-import { AppLoading, Font } from "expo";
 
 
-class Input extends Component {
-  render() {
-    return (
+
+
+const Input = (props) => ( 
       <View>
         <View style={styles.container}>
           <TextInput
@@ -23,16 +22,11 @@ class Input extends Component {
         </View>
       </View>
     );
-  }
-
- 
-}
-
 export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    width:290,
+    width:"80%",
     marginHorizontal: 0,
     color: "white",
     fontSize: 28,
@@ -41,9 +35,9 @@ const styles = StyleSheet.create({
   },
   button: {
     color: "white",
-    width: 10,
+    width: "30%",
     marginEnd: 0,
-    fontFamily: "myFont",
+    
   },
   container: {
     flexDirection: "row",

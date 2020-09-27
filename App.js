@@ -7,6 +7,7 @@ import {
   ScrollView,
   Dimensions,
   SafeAreaView,
+  Text,
 } from "react-native";
 import Selecting from "./components/SelectingContainer";
 import Results from "./components/ResultsContainer";
@@ -15,7 +16,7 @@ import { AppLoading } from "expo";
 
 const fetchFont = () => {
   return Font.loadAsync({
-    myFont: require("./assets/Dosis-VariableFont_wght.ttf"), 
+    myFont: require("./assets/GildaDisplay-Regular.ttf"),
   });
 };
 
@@ -56,7 +57,7 @@ function App() {
 
   console.log(
     "If you need to manipulate based on screen use 'isLandscap'",
-    screenData,
+    screenData.width,
   );
 
   return (
@@ -72,17 +73,22 @@ function App() {
           <SafeAreaView style={styles.center}>
             <Image
               style={styles.swimage}
-             
-              
               source={{
                 uri:
                   "http://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG32.png",
               }}
             ></Image>
-
-            <Selecting style={styles.selecting} />
+            <Selecting
+              style={styles.selecting}
+              height={screenData.height}
+              width={screenData.width}
+            />
             <ScrollView>
-              <Results style={styles.Results} />
+              <Results
+                style={styles.Results}
+                height={screenData.height}
+                width={screenData.width}
+              />
             </ScrollView>
           </SafeAreaView>
         </View>
@@ -93,7 +99,6 @@ function App() {
 export default App;
 
 const styles = StyleSheet.create({
- 
   bimage: {
     alignItems: "center",
     width: null,
@@ -122,6 +127,5 @@ const styles = StyleSheet.create({
   },
   Results: {
     flex: 2,
-    
   },
 });
