@@ -15,7 +15,7 @@ import { AppLoading } from "expo";
 
 const fetchFont = () => {
   return Font.loadAsync({
-    myFont: require("./assets/Dosis-VariableFont_wght.ttf"),
+    myFont: require("./assets/Dosis-VariableFont_wght.ttf"), 
   });
 };
 
@@ -72,6 +72,8 @@ function App() {
           <SafeAreaView style={styles.center}>
             <Image
               style={styles.swimage}
+             
+              
               source={{
                 uri:
                   "http://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG32.png",
@@ -91,9 +93,7 @@ function App() {
 export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    fontFamily: "myFont",
-  },
+ 
   bimage: {
     alignItems: "center",
     width: null,
@@ -109,10 +109,8 @@ const styles = StyleSheet.create({
   },
 
   swimage: {
-   
-    width:230,
-    height:100
-   
+    width: 230,
+    height: 100,
   },
   center: {
     flexDirection: "column",
@@ -120,9 +118,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   selecting: {
-   flex: 1,
+    flex: 1,
   },
   Results: {
-    flex:2,
+    flex: 2,
+    
   },
 });

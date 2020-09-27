@@ -14,9 +14,11 @@ class Input extends Component {
             style={styles.input}
           />
           <Button
-            style={styles.button}
             onPress={() => Alert.alert("Simple Button pressed")}
             title="Filter!"
+            color="white"
+            fontFamily="myFont"
+        
           />
         </View>
       </View>

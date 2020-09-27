@@ -18,13 +18,11 @@ export default ResultsContainer;
 
 const styles = StyleSheet.create({
   container: {
-    width: 360,
+    width: "100%",
     height: 80,
     backgroundColor: "rgba(255, 255, 255, 0.1)",
-    borderWidth: 2,
-    borderColor: "red",
-    margin: 10,
     alignItems: "flex-start",
     justifyContent: "center",
+   
   },
 });
