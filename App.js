@@ -52,9 +52,14 @@ const getData = () => {
        (data) =>
          console.log(data.results) &&
          setposts(data.results) &&
-         setfilteredposts(data.results)
+         setfilteredposts(data.results) &&
+         console.log(posts)
      )
-  });
+     
+     }, []);
+
+    
+  
 }
 
 
@@ -67,7 +72,7 @@ function App() {
   const screenData = useScreenDimensions();
 
    const getData2 = getData();
-console.log(getData2);
+
 
 
   // const [fontLoaded, setFontLoaded] = useState(false);
@@ -121,6 +126,7 @@ console.log(getData2);
                 style={styles.Results}
                 height={screenData.height}
                 width={screenData.width}
+                
               />
             </ScrollView>
           </SafeAreaView>
