@@ -48,9 +48,12 @@ const getData = () => {
 
    fetch(request)
      .then((res) => res.json())
-     .then((data) =>
-       console.log(data.results)
-     );
+     .then(
+       (data) =>
+         console.log(data.results) &&
+         setposts(data.results) &&
+         setfilteredposts(data.results)
+     )
   });
 }
 
