@@ -16,7 +16,7 @@ const Input = (props) => (
             onPress={() => Alert.alert("Simple Button pressed")}
             title="Filter!"
             color="white"
-            fontFamily="myFont"
+           
         
           />
         </View>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 28,
     paddingStart: 8,
-    fontFamily: "myFont",
+    
   },
   button: {
     color: "white",

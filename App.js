@@ -11,14 +11,14 @@ import {
 } from "react-native";
 import Selecting from "./components/SelectingContainer";
 import Results from "./components/ResultsContainer";
-import * as Font from "expo-font";
-import { AppLoading } from "expo";
+// import * as Font from "expo-font";
+// import { AppLoading } from "expo";
 
-const fetchFont = () => {
-  return Font.loadAsync({
-    myFont: require("./assets/GildaDisplay-Regular.ttf"),
-  });
-};
+// const fetchFont = () => {
+//   return Font.loadAsync({
+//     myFont: require("./assets/GildaDisplay-Regular.ttf"),
+//   });
+// };
 
 const useScreenDimensions = () => {
   const [screenData, setScreenData] = useState(Dimensions.get("screen"));
@@ -39,26 +39,56 @@ const useScreenDimensions = () => {
   };
 };
 
+const getData = () => {
+  const [posts, setposts] = useState([]);
+  const [filteredposts, setfilteredposts] = useState([]);
+
+  useEffect(() => {   
+   var request = new Request("https://swapi.dev/api/people/");
+
+   fetch(request)
+     .then((res) => res.json())
+     .then((data) =>
+       console.log(data.results)
+     );
+  });
+}
+
+
+
+
+
+
+
 function App() {
   const screenData = useScreenDimensions();
-  const [fontLoaded, setFontLoaded] = useState(false);
 
-  if (!fontLoaded) {
-    return (
-      <AppLoading
-        startAsync={fetchFont}
-        onError={() => console.log("Error")}
-        onFinish={() => {
-          setFontLoaded(true);
-        }}
-      />
-    );
-  }
+   const getData2 = getData();
+console.log(getData2);
+
+
+  // const [fontLoaded, setFontLoaded] = useState(false);
+
+  // if (!fontLoaded) {
+  //   return (
+  //     <AppLoading
+  //       startAsync={fetchFont}
+  //       onError={() => console.log("Error")}
+  //       onFinish={() => {
+  //         setFontLoaded(true);
+  //       }}
+  //     />
+  //   );
+  // }
 
   console.log(
     "If you need to manipulate based on screen use 'isLandscap'",
     screenData.width,
   );
+
+
+  
+
 
   return (
     <View style={styles.container}>

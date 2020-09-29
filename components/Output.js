@@ -100,19 +100,19 @@ const styles = StyleSheet.create({
   text2: {
     color: "white",
     fontSize: 23,
-    fontFamily: "myFont",
+   
   },
 
   text3: {
     color: "white",
     fontSize: 15,
-    fontFamily: "myFont",
+   
     
   },
 
   text4: {
     fontSize: 18,
-    fontFamily: "myFont",
+   
     color: "white",
   },
 });
