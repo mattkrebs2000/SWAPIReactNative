@@ -17,20 +17,30 @@ import Output from "./Output";
 //   }
 // }
 
-const ResultsContainer = (props) => (
-  <View style={styles.container}>
-    <View>
-      <Output 
-      height={props.height}
-      width={props.width} />
+const ResultsContainer = (props) =>
+  props.posts &&
+  props.posts.map((info, value) => (
+    <View style={styles.container} key={value}>
+      <View>
+        <Output
+          height={props.height}
+          width={props.width}
+          name={info.name}
+          height={info.height}
+          weight={info.mass}
+          hair={info.hair_color}
+          eyes={info.eye_color}
+          gender={info.gender}
+        />
+      </View>
     </View>
-  </View>
-);
-
+  ));
+      
 export default ResultsContainer;
 
 const styles = StyleSheet.create({
   container: {
+    marginBottom: 10,
     height: 80,
     backgroundColor: "rgba(255, 255, 255, 0.1)",
     alignItems: "center",

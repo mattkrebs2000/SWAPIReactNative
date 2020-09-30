@@ -39,28 +39,6 @@ const useScreenDimensions = () => {
   };
 };
 
-const getData = () => {
-  const [posts, setposts] = useState([]);
-  const [filteredposts, setfilteredposts] = useState([]);
-
-  useEffect(() => {   
-   var request = new Request("https://swapi.dev/api/people/");
-
-   fetch(request)
-     .then((res) => res.json())
-     .then(
-       (data) =>
-         console.log(data.results) &&
-         setposts(data.results) &&
-         setfilteredposts(data.results) &&
-         console.log(posts)
-     )
-     
-     }, []);
-
-    
-  
-}
 
 
 
@@ -70,8 +48,46 @@ const getData = () => {
 
 function App() {
   const screenData = useScreenDimensions();
+ const [filteredposts, setfilteredposts] = useState([]);
 
-   const getData2 = getData();
+ useEffect(() => {
+   var request = new Request("https://swapi.dev/api/people/");
+
+   fetch(request)
+     .then((res) => res.json())
+     .then((data) => setfilteredposts(data.results));
+ }, []);
+
+  const [posts, setposts] = useState([]);
+
+  useEffect(() => {
+    var request = new Request("https://swapi.dev/api/people/");
+
+    fetch(request)
+      .then((res) => res.json())
+      .then((data) => setposts(data.results));
+  }, []);
+
+  textsearched = (value) => {
+    let postss = [];
+    for (let i in posts) {
+      let match = false;
+      let postt = posts[i];
+
+      for (let prop in postt) {
+        let lower = JSON.stringify(postt[prop]).toLowerCase();
+        if (lower.includes(value.toLowerCase())) {
+          match = true;
+        }
+      }
+      if (match === true) {
+        postss.push(postt);
+      }
+    }
+    setfilteredposts({ posts });
+  };
+
+ 
 
 
 
@@ -120,12 +136,15 @@ function App() {
               style={styles.selecting}
               height={screenData.height}
               width={screenData.width}
+              textsearched={(value) => textsearched(value)}
             />
             <ScrollView>
               <Results
                 style={styles.Results}
                 height={screenData.height}
                 width={screenData.width}
+               posts={filteredposts}
+                
                 
               />
             </ScrollView>

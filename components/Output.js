@@ -1,40 +1,38 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { AppLoading, Font } from "expo";
 
-
-
-const Output = (props) =>(
-
-  
-      <View>
-      
-          <View style={styles.container} width={props.width-35} maxWidth={650}>
-            <View style={styles.container5}>
-              <View style={styles.container7}>
-                <View style={styles.face}>
-                  <Text style={styles.text}>Hello</Text>
-                </View>
-              </View>
-              <View style={styles.container8}>
-                <View style={styles.container10}>
-                  <Text style={styles.text2}>Search Here</Text>
-                </View>
-                <View style={styles.container11}>
-                  <Text style={styles.text3}>{props.width}</Text>
-                </View>
-              </View>
-              <View style={styles.container9}>
-                <Text style={styles.text4}>{props.height}</Text>
-              </View>
-            </View>
-            <View style={styles.container6}>
-              <Text style={styles.text3}>AAAAAA</Text>
-            </View>
+const Output = (props) => (
+  <View>
+    <View style={styles.container} width={props.width - 35} maxWidth={650}>
+      <View style={styles.container5}>
+        <View style={styles.container7}>
+          <View style={styles.face}>
+            <Text style={styles.text}></Text>
           </View>
-   
+        </View>
+        <View style={styles.container8}>
+          <View style={styles.container10}>
+            <Text style={styles.text2}>{props.name}</Text>
+          </View>
+          <View style={styles.container11}>
+            <Text style={styles.text3}>
+              Height:{props.height} Weight:{props.weight}
+            </Text>
+          </View>
+        </View>
+        <View style={styles.container9}>
+          <Text style={styles.text4}>{props.gender}</Text>
+        </View>
       </View>
-    );
+      <View style={styles.container6}>
+        <Text style={styles.text3}>
+          Eyes:{props.eyes} Hair: {props.hair}
+        </Text>
+      </View>
+    </View>
+  </View>
+);
 
 export default Output;
 
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
   container6: {
     flex: 5,
     width: "100%",
-    alignItems: "center",
+    alignItems: "flex-end",
     justifyContent: "center",
     backgroundColor: "black",
   },
@@ -73,7 +71,7 @@ const styles = StyleSheet.create({
     flex: 6,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black"
+    backgroundColor: "black",
   },
 
   container10: {
@@ -82,8 +80,7 @@ const styles = StyleSheet.create({
   },
 
   container11: {
-    flex: 10,
-    justifyContent: "center",
+    flex: 13,
   },
   text: {
     color: "white",
@@ -100,19 +97,16 @@ const styles = StyleSheet.create({
   text2: {
     color: "white",
     fontSize: 23,
-   
   },
 
   text3: {
     color: "white",
     fontSize: 15,
-   
-    
   },
 
   text4: {
     fontSize: 18,
-   
+
     color: "white",
   },
 });
