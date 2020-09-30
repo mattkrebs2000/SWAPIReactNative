@@ -6,8 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   Dimensions,
-  SafeAreaView,
-  Text,
+  SafeAreaView
 } from "react-native";
 import Selecting from "./components/SelectingContainer";
 import Results from "./components/ResultsContainer";
@@ -76,7 +75,7 @@ function App() {
 
       for (let prop in postt) {
         let lower = JSON.stringify(postt[prop]).toLowerCase();
-        if (lower.includes(value.toLowerCase())) {
+        if (lower.includes(value.toString().toLowerCase(),1)) {
           match = true;
         }
       }
@@ -143,9 +142,7 @@ function App() {
                 style={styles.Results}
                 height={screenData.height}
                 width={screenData.width}
-               posts={filteredposts}
-                
-                
+               posts={filteredposts}           
               />
             </ScrollView>
           </SafeAreaView>

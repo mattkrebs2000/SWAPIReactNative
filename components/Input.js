@@ -1,27 +1,29 @@
-import React from "react";
-import { StyleSheet, View, TextInput, Button, Alert } from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, View, TextInput, Button } from "react-native";
 
 
+function Input (props) {
 
+const [inputentry, setInputentry] = useState("");
 
-const Input = (props) => ( 
-      <View>
-        <View style={styles.container}>
-          <TextInput
-            placeholder="Search Here"
-            placeholderTextColor="white"
-            style={styles.input}
-          />
-          <Button
-            onPress={() => Alert.alert("Simple Button pressed")}
-            title="Filter!"
-            color="white"
-           
-        
-          />
-        </View>
-      </View>
-    );
+return (
+
+  <View>
+    <View style={styles.container}>
+      <TextInput
+        placeholder="Search Here"
+        placeholderTextColor="white"
+        style={styles.input}
+        onChange={(event) => setInputentry({searchtext: event.target.value})}
+      />
+      <Button
+        onPress={() => props.textsearched(inputentry)}
+        title="Filter!"
+        color="white"
+      />
+    </View>
+  </View>
+)};
 export default Input;
 
 const styles = StyleSheet.create({

@@ -3,9 +3,13 @@ import { StyleSheet, View } from "react-native";
 import Input from "./Input";
 
 const SelectingContainer = (props) => (
-  <View style={styles.container} width= {props.width-35} maxWidth={650}>
+  <View style={styles.container} width={props.width - 35} maxWidth={650}>
     <View>
-      <Input height={props.height} width={props.width} />
+      <Input
+        height={props.height}
+        width={props.width}
+        textsearched={(value) => props.textsearched(value)}
+      />
     </View>
   </View>
 );

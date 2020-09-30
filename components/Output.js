@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text,Image } from "react-native";
 import { AppLoading, Font } from "expo";
 
 const Output = (props) => (
@@ -8,7 +8,66 @@ const Output = (props) => (
       <View style={styles.container5}>
         <View style={styles.container7}>
           <View style={styles.face}>
-            <Text style={styles.text}></Text>
+            <View style={styles.text}>
+              {props.name === "R2-D2" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/R2-D2.png")}
+                />
+              ) : props.name === "Beru Whitesun lars" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/BeruWhitesunlars.png")}
+                />
+              ) : props.name === "Biggs Darklighter" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/BiggsDarklighter.png")}
+                />
+              ) : props.name === "C-3PO" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/C-3PO.png")}
+                />
+              ) : props.name === "Darth Vader" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/DarthVader.png")}
+                />
+              ) : props.name === "Leia Organa" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/LeiaOrgana.png")}
+                />
+              ) : props.name === "Luke Skywalker" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/LukeSkywalker.png")}
+                />
+              ) : props.name === "Obi-Wan Kenobi" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/Obi-WanKenobi.png")}
+                />
+              ) : props.name === "Owen Lars" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/OwenLars.png")}
+                />
+              ) : props.name === "R5-D4" ? (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/R5-D4.png")}
+                />
+              ) :  (
+                <Image
+                  style={styles.faces}
+                  source={require("../assets/images/R2-D2.png")}
+                />
+              )
+               
+              }
+            </View>
           </View>
         </View>
         <View style={styles.container8}>
@@ -109,4 +168,38 @@ const styles = StyleSheet.create({
 
     color: "white",
   },
+  faces: {
+    width:40,
+    height: 40,
+  },
 });
+
+// {
+//   props.name === "R2-D2" ? (
+//     <Image source={{ uri: "./images/R2-D2.png" }} />
+//   ) : props.name === "C-3PO" ? (
+//     <Image source="./C-3PO.png" alt="?"></Image>
+//   ) : props.name === "Luke Skywalker" ? (
+//     <Image source="./images/Luke Skywalker.png" alt="?"></Image>
+//   ) : props.name === "Beru Whitesun lars" ? (
+//     <Image source="./images/Beru Whitesun lars.png" alt="?"></Image>
+//   ) : props.name === "Biggs Darklighter" ? (
+//     <Image
+//       source="./assets/images/Biggs Darklighter.png"
+//       alt="?"
+//       style={{ width: "95%", height: "97.5%" }}
+//     ></Image>
+//   ) : props.name === "Darth Vader" ? (
+//     <Image source="./images/Darth Vader.png" alt="?"></Image>
+//   ) : props.name === "Leia Organa" ? (
+//     <Image source="./images/Leia Organa.png" alt="?"></Image>
+//   ) : props.name === "Obi-Wan Kenobi" ? (
+//     <Image source="./images/Obi-Wan Kenobi.png" alt="?"></Image>
+//   ) : props.name === "Owen Lars" ? (
+//     <Image source="./images/Owen Lars.png" alt="?"></Image>
+//   ) : props.name === "R5-D4" ? (
+//     <Image source="./images/R5-D4.png" alt="?"></Image>
+//   ) : (
+//     "image"
+//   );
+// }
