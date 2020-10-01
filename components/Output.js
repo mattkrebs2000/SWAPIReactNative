@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text,Image } from "react-native";
 
-// import { AppLoading, Font } from "expo";
+import { AppLoading, Font } from "expo";
 
 const Output = (props) => (
   <View>
@@ -146,8 +146,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   face: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 55,
     borderWidth: 2,
     borderColor: "white",
     borderRadius: 50,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   faces: {
-    width:40,
-    height: 40,
+    width:60,
+    height: 50,
   },
 });

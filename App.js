@@ -76,7 +76,7 @@ function App() {
       for (let prop in postt) {
         let lower = JSON.stringify(postt[prop]).toLowerCase();
         console.log("1", value )
-        if (lower.includes(value.searchtext.toString().toLowerCase(),1)) {
+        if (lower.startsWith(value.searchtext.toString().toLowerCase(),1)) {
           match = true;
         }
       }
