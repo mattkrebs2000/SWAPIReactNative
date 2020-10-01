@@ -75,7 +75,8 @@ function App() {
 
       for (let prop in postt) {
         let lower = JSON.stringify(postt[prop]).toLowerCase();
-        if (lower.includes(value.toString().toLowerCase(),1)) {
+        console.log("1", value )
+        if (lower.includes(value.searchtext.toString().toLowerCase(),1)) {
           match = true;
         }
       }
@@ -83,7 +84,8 @@ function App() {
         postss.push(postt);
       }
     }
-    setfilteredposts({ posts });
+  console.log("HERITIS", postss)
+    setfilteredposts( postss );
   };
 
  
@@ -112,7 +114,7 @@ function App() {
 
   
 
-
+console.log("Heeellooo", filteredposts);
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -149,7 +151,9 @@ function App() {
         </View>
       </ImageBackground>
     </View>
+    
   );
+  
 }
 export default App;
 

@@ -13,7 +13,7 @@ const SelectingContainer = (props) => (
     </View>
   </View>
 );
-    ;
+    
 
 
 export default SelectingContainer;

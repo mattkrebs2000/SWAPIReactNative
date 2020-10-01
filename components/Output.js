@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text,Image } from "react-native";
-import { AppLoading, Font } from "expo";
+
+// import { AppLoading, Font } from "expo";
 
 const Output = (props) => (
   <View>
@@ -173,33 +174,3 @@ const styles = StyleSheet.create({
     height: 40,
   },
 });
-
-// {
-//   props.name === "R2-D2" ? (
-//     <Image source={{ uri: "./images/R2-D2.png" }} />
-//   ) : props.name === "C-3PO" ? (
-//     <Image source="./C-3PO.png" alt="?"></Image>
-//   ) : props.name === "Luke Skywalker" ? (
-//     <Image source="./images/Luke Skywalker.png" alt="?"></Image>
-//   ) : props.name === "Beru Whitesun lars" ? (
-//     <Image source="./images/Beru Whitesun lars.png" alt="?"></Image>
-//   ) : props.name === "Biggs Darklighter" ? (
-//     <Image
-//       source="./assets/images/Biggs Darklighter.png"
-//       alt="?"
-//       style={{ width: "95%", height: "97.5%" }}
-//     ></Image>
-//   ) : props.name === "Darth Vader" ? (
-//     <Image source="./images/Darth Vader.png" alt="?"></Image>
-//   ) : props.name === "Leia Organa" ? (
-//     <Image source="./images/Leia Organa.png" alt="?"></Image>
-//   ) : props.name === "Obi-Wan Kenobi" ? (
-//     <Image source="./images/Obi-Wan Kenobi.png" alt="?"></Image>
-//   ) : props.name === "Owen Lars" ? (
-//     <Image source="./images/Owen Lars.png" alt="?"></Image>
-//   ) : props.name === "R5-D4" ? (
-//     <Image source="./images/R5-D4.png" alt="?"></Image>
-//   ) : (
-//     "image"
-//   );
-// }

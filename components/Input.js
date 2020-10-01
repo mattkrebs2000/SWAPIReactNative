@@ -14,7 +14,7 @@ return (
         placeholder="Search Here"
         placeholderTextColor="white"
         style={styles.input}
-        onChange={(event) => setInputentry({searchtext: event.target.value})}
+        onChangeText={(event) => setInputentry({searchtext: event})}
       />
       <Button
         onPress={() => props.textsearched(inputentry)}
