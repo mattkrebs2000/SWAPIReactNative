@@ -8,7 +8,7 @@ A React Native APP which makes a call to the Star Wars API to bring up data on y
 
 [logo]: https://github.com/mattkrebs2000/SWAPIReactNative/blob/master/StarWars1.png
 
-![alt text][logo]
+![alt text][logo2]
 
 [logo2]: https://github.com/mattkrebs2000/SWAPIReactNative/blob/master/StarWars3.png
 
