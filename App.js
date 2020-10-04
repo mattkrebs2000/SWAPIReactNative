@@ -114,7 +114,6 @@ function App() {
 
   
 
-console.log("Heeellooo", filteredposts);
   return (
     <View style={styles.container}>
       <ImageBackground
